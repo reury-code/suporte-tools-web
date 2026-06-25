@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Política de Privacidade da extensão FibraTools para o Google Chrome. Saiba como seus dados são tratados." />
+  <title>Política de Privacidade – FibraTools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --accent: #2f81f7;
+      --accent-glow: rgba(47, 129, 247, 0.15);
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --green: #3fb950;
+      --green-bg: rgba(63, 185, 80, 0.1);
+      --red: #f85149;
+      --red-bg: rgba(248, 81, 73, 0.1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ─────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(47,129,247,0.12), transparent);
+      pointer-events: none;
+    }
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      margin-bottom: 1.25rem;
+    }
+    .logo-icon {
+      width: 42px; height: 42px;
+      background: linear-gradient(135deg, #2f81f7, #1a56b0);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 0 20px rgba(47,129,247,.35);
+    }
+    .logo-name { font-size: 1.35rem; font-weight: 700; letter-spacing: -.02em; }
+    header h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; letter-spacing: -.03em; }
+    header h1 span { color: var(--accent); }
+    .header-meta {
+      margin-top: .85rem;
+      font-size: .82rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: var(--green-bg);
+      color: var(--green);
+      border: 1px solid rgba(63,185,80,.3);
+      border-radius: 999px;
+      padding: .2rem .75rem;
+      font-size: .75rem; font-weight: 600;
+      letter-spacing: .03em;
+    }
+
+    /* ── Layout ──────────────────────────────────────────── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* ── Table of contents ───────────────────────────────── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .toc h2 { font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: .9rem; }
+    .toc ol { padding-left: 1.1rem; }
+    .toc li { margin-bottom: .35rem; }
+    .toc a { color: var(--accent); text-decoration: none; font-size: .9rem; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── Sections ────────────────────────────────────────── */
+    section { margin-bottom: 2.75rem; }
+    section h2 {
+      font-size: 1.2rem; font-weight: 700;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.1rem;
+      display: flex; align-items: center; gap: .55rem;
+    }
+    section h2 .icon {
+      width: 28px; height: 28px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(47,129,247,.25);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .9rem; flex-shrink: 0;
+    }
+    section p { color: #c9d1d9; margin-bottom: .8rem; }
+    section p:last-child { margin-bottom: 0; }
+
+    /* ── Callout boxes ───────────────────────────────────── */
+    .callout {
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      display: flex; gap: .75rem;
+    }
+    .callout.green {
+      background: var(--green-bg);
+      border: 1px solid rgba(63,185,80,.3);
+      color: #b9efbd;
+    }
+    .callout.red {
+      background: var(--red-bg);
+      border: 1px solid rgba(248,81,73,.3);
+      color: #ffc1be;
+    }
+    .callout.blue {
+      background: var(--accent-glow);
+      border: 1px solid rgba(47,129,247,.3);
+      color: #a5c8ff;
+    }
+    .callout-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: .05rem; }
+    .callout-text { font-size: .9rem; line-height: 1.6; }
+    .callout-text strong { font-weight: 600; }
+
+    /* ── Data table ──────────────────────────────────────── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin: 1rem 0;
+    }
+    .data-table th {
+      background: #1c2230;
+      padding: .65rem 1rem;
+      text-align: left;
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--text-muted);
+    }
+    .data-table td {
+      padding: .75rem 1rem;
+      border-top: 1px solid var(--border);
+      font-size: .9rem;
+      color: #c9d1d9;
+    }
+    .data-table tr:hover td { background: rgba(255,255,255,.025); }
+    .pill {
+      display: inline-block;
+      padding: .15rem .6rem;
+      border-radius: 999px;
+      font-size: .72rem; font-weight: 600;
+    }
+    .pill.local { background: var(--green-bg); color: var(--green); border: 1px solid rgba(63,185,80,.3); }
+    .pill.none  { background: rgba(139,148,158,.1); color: var(--text-muted); border: 1px solid rgba(139,148,158,.2); }
+
+    /* ── Contact card ────────────────────────────────────── */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .contact-card .avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, #2f81f7, #1a56b0);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .contact-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: .25rem; }
+    .contact-card p { color: var(--text-muted); font-size: .875rem; margin: 0; }
+    .contact-card a { color: var(--accent); text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      color: var(--text-muted);
+      font-size: .8rem;
+    }
+    footer a { color: var(--text-muted); text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-wrap">
+    <div class="logo-icon">🔧</div>
+    <span class="logo-name">FibraTools</span>
+  </div>
+  <h1>Política de <span>Privacidade</span></h1>
+  <div class="header-meta">
+    <span>Versão 2.0.3</span>
+    <span>Última atualização: 24 de junho de 2026</span>
+    <span class="badge">✔ Sem coleta de dados externos</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- Table of contents -->
+  <nav class="toc" aria-label="Sumário">
+    <h2>Conteúdo</h2>
+    <ol>
+      <li><a href="#overview">Visão geral</a></li>
+      <li><a href="#data-collected">Dados coletados</a></li>
+      <li><a href="#storage">Armazenamento local</a></li>
+      <li><a href="#permissions">Permissões solicitadas</a></li>
+      <li><a href="#third-parties">Terceiros</a></li>
+      <li><a href="#user-rights">Direitos do usuário</a></li>
+      <li><a href="#changes">Alterações nesta política</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1. Visão geral -->
+  <section id="overview">
+    <h2><span class="icon">📋</span> 1. Visão geral</h2>
+    <p>
+      A extensão <strong>FibraTools</strong> (ID: <code>oinhbadjkedncidapilndkokkjepglnc</code>) foi desenvolvida
+      para aumentar a produtividade de técnicos de provedores de internet (ISPs). Ela automatiza o login em
+      roteadores locais ZTE e otimiza a leitura e o preenchimento de notas técnicas dentro do sistema de gestão SGP.
+    </p>
+    <div class="callout green">
+      <span class="callout-icon">🛡️</span>
+      <div class="callout-text">
+        <strong>Compromisso com a privacidade:</strong> a FibraTools foi projetada com privacidade desde o início.
+        Nenhum dado pessoal, de navegação ou credencial é enviado a servidores externos.
+        Toda a lógica é executada localmente no dispositivo do técnico.
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Dados coletados -->
+  <section id="data-collected">
+    <h2><span class="icon">🗄️</span> 2. Dados coletados</h2>
+    <p>A tabela abaixo detalha cada categoria de dado e como ela é tratada:</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Categoria</th>
+          <th>Coletado?</th>
+          <th>Destino</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Credenciais de roteador (usuário/senha)</td>
+          <td><span class="pill local">Somente local</span></td>
+          <td>chrome.storage.local — nunca sai do dispositivo</td>
+        </tr>
+        <tr>
+          <td>Informações de identificação pessoal</td>
+          <td><span class="pill none">Não coletado</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Histórico de navegação</td>
+          <td><span class="pill none">Não coletado</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Dados financeiros ou de saúde</td>
+          <td><span class="pill none">Não coletado</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Localização ou endereço IP</td>
+          <td><span class="pill none">Não coletado</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Atividade do usuário / teclas pressionadas</td>
+          <td><span class="pill none">Não coletado</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Conteúdo de páginas visitadas</td>
+          <td><span class="pill none">Não transmitido</span></td>
+          <td>Lido em tempo de execução apenas para preencher formulários SGP/ZTE</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout red">
+      <span class="callout-icon">🚫</span>
+      <div class="callout-text">
+        <strong>Nunca vendemos, alugamos ou compartilhamos</strong> quaisquer dados do usuário com terceiros,
+        parceiros comerciais ou anunciantes, em nenhuma circunstância.
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Armazenamento local -->
+  <section id="storage">
+    <h2><span class="icon">💾</span> 3. Armazenamento local</h2>
+    <p>
+      A extensão utiliza exclusivamente a API <code>chrome.storage.local</code> para persistir os perfis de
+      acesso a roteadores (endereço IP, usuário e senha) que o técnico cadastra voluntariamente.
+      Esses dados:
+    </p>
+    <div class="callout blue">
+      <span class="callout-icon">ℹ️</span>
+      <div class="callout-text">
+        <strong>Ficam 100% no dispositivo local</strong> — não são sincronizados com a conta Google,
+        não são enviados a nenhum servidor e não são acessíveis por outros sites ou extensões.
+      </div>
+    </div>
+    <p>
+      O usuário pode remover todos os dados armazenados a qualquer momento através do popup da extensão
+      ou desinstalando a extensão, o que apaga automaticamente todos os dados do <code>chrome.storage.local</code>.
+    </p>
+  </section>
+
+  <!-- 4. Permissões -->
+  <section id="permissions">
+    <h2><span class="icon">🔑</span> 4. Permissões solicitadas</h2>
+    <p>A extensão solicita apenas as permissões estritamente necessárias para sua funcionalidade:</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Permissão</th>
+          <th>Finalidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>storage</code></td>
+          <td>Salvar perfis de roteadores localmente para acesso rápido pelo técnico</td>
+        </tr>
+        <tr>
+          <td><code>http://*/*</code> e <code>https://*/*</code></td>
+          <td>
+            Roteadores ZTE operam em IPs privados arbitrários (ex.: 192.168.x.x, 10.x.x.x)
+            não previsíveis em tempo de desenvolvimento. O painel SGP varia por provedor.
+            A extensão detecta a estrutura específica dos formulários antes de agir.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 5. Terceiros -->
+  <section id="third-parties">
+    <h2><span class="icon">🌐</span> 5. Terceiros</h2>
+    <p>
+      A FibraTools <strong>não integra</strong> serviços de análise, rastreamento, publicidade ou
+      qualquer biblioteca de terceiros que transmita dados do usuário para fora do navegador.
+      Não há requisições para servidores externos originadas pela extensão.
+    </p>
+  </section>
+
+  <!-- 6. Direitos do usuário -->
+  <section id="user-rights">
+    <h2><span class="icon">⚖️</span> 6. Direitos do usuário</h2>
+    <p>Como os dados ficam integralmente no dispositivo do próprio usuário, o controle é total:</p>
+    <div class="callout green">
+      <span class="callout-icon">✅</span>
+      <div class="callout-text">
+        <strong>Acesso e exclusão:</strong> abra o popup da extensão e remova individualmente qualquer
+        perfil salvo, ou desinstale a extensão para apagar todos os dados de uma só vez.
+      </div>
+    </div>
+    <p>
+      A extensão não coleta dados que exijam solicitação formal de exclusão a terceiros.
+    </p>
+  </section>
+
+  <!-- 7. Alterações -->
+  <section id="changes">
+    <h2><span class="icon">🔄</span> 7. Alterações nesta política</h2>
+    <p>
+      Esta Política de Privacidade pode ser atualizada conforme novas versões da extensão forem lançadas.
+      Sempre que houver alteração relevante, a data de "última atualização" no topo desta página será modificada.
+      A premissa de não coletar dados externos será mantida em todas as versões futuras.
+    </p>
+  </section>
+
+  <!-- 8. Contato -->
+  <section id="contact">
+    <h2><span class="icon">✉️</span> 8. Contato</h2>
+    <p>Dúvidas sobre esta política ou sobre o tratamento dos seus dados? Entre em contato:</p>
+    <div class="contact-card">
+      <div class="avatar">👤</div>
+      <div>
+        <h3>Desenvolvedor FibraTools</h3>
+        <p>Extensão ID: <code>oinhbadjkedncidapilndkokkjepglnc</code></p>
+        <p>Você pode entrar em contato através da
+          <a href="https://chromewebstore.google.com/detail/oinhbadjkedncidapilndkokkjepglnc" target="_blank" rel="noopener">
+            página da extensão na Chrome Web Store
+          </a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 FibraTools · Esta política é aplicável à extensão versão 2.0.3 e superiores.</p>
+  <p style="margin-top:.4rem;">
+    <a href="https://chromewebstore.google.com/detail/oinhbadjkedncidapilndkokkjepglnc">Chrome Web Store</a>
+  </p>
+</footer>
+
+</body>
+</html>
